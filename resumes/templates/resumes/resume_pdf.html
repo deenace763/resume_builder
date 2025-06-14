@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        h1 { border-bottom: 1px solid #000; }
+        h2 { margin-top: 20px; }
+        p { white-space: pre-wrap; }
+    </style>
+</head>
+<body>
+    <h1>{{ resume.full_name }}</h1>
+    <p><strong>Email:</strong> {{ resume.email }}</p>
+    <p><strong>Phone:</strong> {{ resume.phone }}</p>
+
+    <h2>Summary</h2>
+    <p>{{ resume.summary }}</p>
+
+    <h2>Education</h2>
+    <p>{{ resume.education }}</p>
+
+    <h2>Experience</h2>
+    <p>{{ resume.experience }}</p>
+
+    <h2>Skills</h2>
+    <p>{{ resume.skills }}</p>
+
+    <h2>Projects</h2>
+    <p>{{ resume.projects }}</p>
+</body>
+</html>

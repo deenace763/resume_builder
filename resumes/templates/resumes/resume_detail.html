@@ -1,0 +1,43 @@
+{% extends "resumes/base.html" %}
+
+{% block title %}Your Resume{% endblock %}
+
+{% block content %}
+<div class="card shadow-sm p-4 mb-4">
+    <h2 class="text-primary">{{ resume.full_name }}</h2>
+    <p><strong>Email:</strong> {{ resume.email }}</p>
+    <p><strong>Phone:</strong> {{ resume.phone }}</p>
+    <hr />
+
+    <div class="mb-4">
+        <h4 class="text-secondary">Summary</h4>
+        <p>{{ resume.summary|linebreaks }}</p>
+    </div>
+
+    <div class="mb-4">
+        <h4 class="text-secondary">Education</h4>
+        <p>{{ resume.education|linebreaks }}</p>
+    </div>
+
+    <div class="mb-4">
+        <h4 class="text-secondary">Experience</h4>
+        <p>{{ resume.experience|linebreaks }}</p>
+    </div>
+
+    <div class="mb-4">
+        <h4 class="text-secondary">Skills</h4>
+        <p>{{ resume.skills|linebreaks }}</p>
+    </div>
+
+    <div class="mb-4">
+        <h4 class="text-secondary">Projects</h4>
+        <p>{{ resume.projects|linebreaks }}</p>
+    </div>
+</div>
+
+<div class="d-flex gap-2">
+    <a href="{% url 'resume_edit' resume.pk %}" class="btn btn-warning">Edit Resume</a>
+    <a href="{% url 'resume_pdf' resume.pk %}" class="btn btn-success">Download PDF</a>
+    <a href="{% url 'dashboard' %}" class="btn btn-secondary">Back to Dashboard</a>
+</div>
+{% endblock %}
